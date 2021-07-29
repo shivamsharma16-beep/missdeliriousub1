@@ -1,0 +1,15 @@
+{
+  "name": "Miss Delirious Userbot",
+  "description": "Modern Telegram User Bot Manager with Web based Dashboard",
+  "repository": "https://github.com/shivamsharma16-beep/missdeliriousub",
+  "logo": "https://telegra.ph/file/d6e6b1fcf3252659923fd.jpg",
+  "keywords": ["userbot", "telegram", "nodejs", "gramjs"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    }
+  ]
+}

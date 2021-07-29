@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "useWorkspaces": true,
+  "license": "MIT",
+  "dependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4"
+  },
+  "scripts": {
+    "start": "node dist",
+    "dev": "concurrently --kill-others \"yarn dev:client\" \"yarn dev:server\"",
+    "build": "gulp",
+    "dev:server": "lerna run dev --scope @ionapp/bot --stream",
+    "dev:client": "lerna run dev --scope dashboard",
+    "build:server": "lerna run build --scope @ionapp/bot --stream",
+    "build:client": "lerna run build --scope dashboard --stream",
+    "new-version": "lerna version",
+    "release": "lerna version && gulp dist",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "gulp": "^4.0.2",
+    "gulp-run": "^1.7.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.1.0",
+    "husky": "^7.0.1",
+    "lerna": "^4.0.0",
+    "standard-version": "^9.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}
